@@ -7,7 +7,7 @@ The image uses [dumb-init](https://github.com/Yelp/dumb-init) as ENTRYPOINT, whi
 
 A default CMD `/srv/run.sh` is specified, a script that executes `sleep infinity`.
 
-# Use cases
+# Usage
 
 ## Just test it
 

@@ -1,16 +1,20 @@
 # ........................................................................ About
 
-# This docker image basically is just the OS, with some minor tweaks:
-# - Installs a few practical often used programs (e.g. by image installers)
-# - Files and folders are copied from the folder "image-files"
-# - Adds dump-init to prevent zombie processes when stopping containers
+# This docker image extends the image
+# [debian:bullseye-slim](https://hub.docker.com/_/debian) and
+# installs some `Swiss knife` tools that are often used by installers
+# and scripts.
 #
-# Jens Kleinhout
-# hkdigital.nl
+# The image uses [dumb-init](https://github.com/Yelp/dumb-init) as
+# ENTRYPOINT, which overrides the default `/bin/sh -c`.
+#
+# A default CMD `/srv/run.sh` is specified, a script that executes
+# `sleep infinity`.
+#
 
 # ......................................................................... FROM
 
-FROM debian:buster-slim
+FROM debian:bullseye-slim
 
 MAINTAINER Jens Kleinhout "hello@hkdigital.nl"
 

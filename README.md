@@ -15,7 +15,7 @@ Clone the latest commit from github into a local working directory
       git@github.com:hkdigital/docker-images-debian-slim-2021a.git \
       debian-slim-2021a
 
-## Build the docker image
+Build the docker image
 
       ./build-latest-image.sh
 
@@ -37,13 +37,13 @@ Run the following command to run an interactive bash shell:
 
     docker run -ti --rm debian-slim-2021a bash
 
-A bash shell opens and you're free to do whatever you want. To exit the bash shell, type `exit`. Note that the container will be removed when the bash shell is exited. Configuration or installed programs in the container will be lost.
+A bash shell opens and you're free to do whatever you want. To exit the bash shell, type `exit`. Note that the container will be removed when the bash shell exits. Configuration or installed programs in the container will be lost.
 
 Note that the script `run-tmp-bash-container.sh`, which is included in this project, do nothing more than the command shown above.
 
 ### Run using docker-compose
 
-Below an example is shown of how to use the image in a docker-compose file. The image will be downloaded from [Docker Hub](https://https://hub.docker.com).
+Below an example is shown of how the image can be used in a docker-compose file. The image will be downloaded from [Docker Hub](https://https://hub.docker.com).
 
 Note that the container will execute the default CMD. The default CMD executes `sleep infinity`, so the container will not terminate until you stop the container or press ctrl-c to stop the script.
 
@@ -73,7 +73,7 @@ Use the second terminal to stop and remove the container:
 
 ### Run bash in an existing and running container (docker-compose)
 
-Use the following command to execute [bash] inside a running container (e.g. started like in the use-case above)
+Use the following command to execute `bash` inside a running container (e.g. started like in the use-case above)
 
 ```bash
     docker-compose exec debian bash

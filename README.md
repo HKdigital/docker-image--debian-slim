@@ -81,3 +81,12 @@ Use the following command to execute `bash` inside a running container (e.g. sta
 
 Type `exit` to quit.
 
+### Extend the image
+
+Specify the name of this image in the FROM command of your Dockerfile.
+
+```
+   FROM hkdigital/debian-slim-2021a:latest
+   ...
+```
+

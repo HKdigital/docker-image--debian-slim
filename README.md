@@ -7,25 +7,13 @@ The image uses [dumb-init](https://github.com/Yelp/dumb-init) as ENTRYPOINT, whi
 
 A default CMD `/srv/run.sh` is specified, a script that executes `sleep infinity`.
 
-# Installation
-
-Clone the latest commit from github into a local working directory
-
-    git clone --depth 1 \
-      git@github.com:hkdigital/docker-images-debian-slim-2021a.git \
-      debian-slim-2021a
-
-Build the docker image
-
-      ./build-latest-image.sh
-
 # Use cases
 
 ## Just test it
 
 Run a container:
 
-    docker run --rm debian-slim-2021a
+    docker run --rm hkdigital/debian-slim-2021a
 
 This command will create a docker container, run the default CMD `/srv/run.sh` inside the container and remove the container when the script finishes.
 
@@ -35,7 +23,7 @@ By default `/srv/run.sh` will execute the command "sleep infinity", so it won't 
 
 Run the following command to run an interactive bash shell:
 
-    docker run -ti --rm debian-slim-2021a bash
+    docker run -ti --rm hkdigital/debian-slim-2021a bash
 
 A bash shell opens and you're free to do whatever you want. To exit the bash shell, type `exit`. Note that the container will be removed when the bash shell exits. Configuration or installed programs in the container will be lost.
 
@@ -53,7 +41,7 @@ docker-compose.yaml
 
     services:
       debian:
-        image: hkdigital/debian-slim-2021a:latest
+        image: hkdigital/debian-slim-2021a
 ```
 
 Open two terminals and go to the directory where the `docker-compose.yaml` file resides.
@@ -86,7 +74,19 @@ Type `exit` to quit.
 Specify the name of this image in the FROM command of your Dockerfile.
 
 ```
-   FROM hkdigital/debian-slim-2021a:latest
+   FROM hkdigital/debian-slim-2021a
    ...
 ```
+
+# Build locally
+
+Clone the latest commit from github into a local working directory
+
+    git clone --depth 1 \
+      git@github.com:hkdigital/docker-images-debian-slim-2021a.git \
+      debian-slim-2021a
+
+Build the docker image
+
+      ./build-latest-image.sh
 

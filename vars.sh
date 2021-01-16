@@ -8,8 +8,4 @@ if [ -z "${FOLDER_NAME}" ] || [ "." == "${FOLDER_NAME}" ]; then
 fi
 
 IMAGE_NAME="${FOLDER_NAME}:latest"
-APP_BASE_NAME="${FOLDER_NAME}"
-
 CONTAINER_NAME=${FOLDER_NAME}
-
-# echo $APP_BASE_NAME

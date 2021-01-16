@@ -17,7 +17,7 @@ Run a container:
 
 This command will create a docker container, run the default CMD `/srv/run.sh` inside the container and remove the container when the script finishes.
 
-By default `/srv/run.sh` will execute the command "sleep infinity", so it won't finish. Press ctrl-c to quit the script and srop and remove the container.
+By default `/srv/run.sh` will execute the command "sleep infinity", so it won't finish. Press ctrl-c to quit the script and to stop and remove the container.
 
 ## Run a bash shell inside the container
 

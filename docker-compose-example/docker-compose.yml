@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  debian:
+    image: hkdigital-debian-slim-2021a
+
+    restart: "no" # "no"|always|on-failure|unless-stopped
+
+    env_file:
+      - docker-compose.env
+
+    volumes:
+      - ./volumes/shared:/mnt/shared

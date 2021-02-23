@@ -25,3 +25,5 @@ Thumbs.db
 nbproject
 .idea
 .node_history
+
+docker-compose/volumes

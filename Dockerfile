@@ -21,7 +21,7 @@ MAINTAINER Jens Kleinhout "hello@hkdigital.nl"
 # .......................................................................... ENV
 
 # Update the timestamp below to force an apt-get update during build
-ENV APT_SOURCES_REFRESHED_AT 2021-01-14_16h08
+ENV APT_SOURCES_REFRESHED_AT 2021-05-23_16h25
 
 # ........................................................ Install default tools
 
@@ -41,7 +41,7 @@ RUN apt-get -qq update && \
 #        questions/30215830/dockerfile-copy-keep-subdirectory-structure
 
 # Update the timestamp below to force copy of image-files during build
-ENV IMAGE_FILES_REFRESHED_AT 2021-01-14_16h08
+ENV IMAGE_FILES_REFRESHED_AT 2021-05-23_16h25
 
 COPY ./image-files/ /
 

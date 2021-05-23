@@ -13,7 +13,9 @@ A default CMD `/srv/run.sh` is specified, a script that executes `sleep infinity
 
 Run a container:
 
-    docker run --rm hkdigital/debian-slim-2021a
+```bash
+docker run --rm hkdigital/debian-slim-2021a
+```
 
 This command will create a docker container, run the default CMD `/srv/run.sh` inside the container and remove the container when the script finishes.
 
@@ -23,7 +25,9 @@ By default `/srv/run.sh` will execute the command "sleep infinity", so it won't 
 
 Run the following command to run an interactive bash shell:
 
-    docker run -ti --rm hkdigital/debian-slim-2021a bash
+```bash
+docker run -ti --rm hkdigital/debian-slim-2021a bash
+```
 
 A bash shell opens and you're free to do whatever you want. To exit the bash shell, type `exit`. Note that the container will be removed when the bash shell exits. Configuration or installed programs in the container will be lost.
 
@@ -37,11 +41,11 @@ Note that the container will execute the default CMD. The default CMD executes `
 
 docker-compose.yaml
 ```yaml
-    version: "3.9"
+version: "3.9"
 
-    services:
-      debian:
-        image: hkdigital/debian-slim-2021a
+services:
+  debian:
+    image: hkdigital/debian-slim-2021a
 ```
 
 Open two terminals and go to the directory where the `docker-compose.yaml` file resides.
@@ -49,14 +53,14 @@ Open two terminals and go to the directory where the `docker-compose.yaml` file 
 In the first terminal start the container:
 
 ```bash
-    docker-compose up
+docker-compose up
 ```
 
 Use the second terminal to stop and remove the container:
 
 ```bash
-    docker-compose stop
-    docker-compose rm
+docker-compose stop
+docker-compose rm
 ```
 
 ### Run bash in an existing and running container (docker-compose)
@@ -64,7 +68,7 @@ Use the second terminal to stop and remove the container:
 Use the following command to execute `bash` inside a running container (e.g. started like in the use-case above)
 
 ```bash
-    docker-compose exec debian bash
+docker-compose exec debian bash
 ```
 
 Type `exit` to quit.
@@ -74,19 +78,33 @@ Type `exit` to quit.
 Specify the name of this image in the FROM command of your Dockerfile.
 
 ```
-   FROM hkdigital/debian-slim-2021a
-   ...
+FROM hkdigital/debian-slim-2021a
+...
 ```
 
 # Build locally
 
 Clone the latest commit from github into a local working directory
 
-    git clone --depth 1 \
-      git@github.com:hkdigital/docker-images-debian-slim-2021a.git \
-      debian-slim-2021a
+```bash
+git clone --depth 1 \
+  git@github.com:hkdigital/docker-images-debian-slim-2021a.git \
+  debian-slim-2021a
+```
 
 Build the docker image
 
-      ./build-latest-image.sh
+```bash
+./build-latest-image.sh
+```
 
+# Extra: push to docker hub
+
+This is a generic instruction to push your images to `docker hub`. You must setup a (free) docker hub account and create the repository.
+
+```bash
+docker tag <existing-image> <hub-user>/<repo-name>[:<tag>]
+docker push <hub-user>/<repo-name>:<tag>
+```
+
+See also [Docker hub repositories] (https://docs.docker.com/docker-hub/repos/)

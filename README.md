@@ -98,7 +98,7 @@ Build the docker image
 ./build-latest-image.sh
 ```
 
-# Extra: push to docker hub
+## Extra: push to docker hub
 
 This is a generic instruction to push your images to `docker hub`. You must setup a (free) docker hub account and create the repository.
 

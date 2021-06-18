@@ -9,7 +9,7 @@ A default CMD `/srv/run.sh` is specified, a script that executes `sleep infinity
 
 # Usage
 
-## Just test it
+## Just try it out
 
 Run a container:
 
@@ -88,8 +88,8 @@ Clone the latest commit from github into a local working directory
 
 ```bash
 git clone --depth 1 \
-  git@github.com:hkdigital/docker-images-debian-slim-2021a.git \
-  debian-slim-2021a
+  git@github.com:hkdigital/docker-images--debian-slim-2021a.git \
+  hkdigital-debian-slim-2021a
 ```
 
 Build the docker image

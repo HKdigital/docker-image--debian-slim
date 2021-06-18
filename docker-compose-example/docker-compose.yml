@@ -2,8 +2,8 @@ version: "3"
 
 services:
   debian:
-    # image: hkdigital/debian-slim-2021a   # docker-hub
-    image: hkdigital-debian-slim-2021a   # local
+    image: hkdigital/debian-slim-2021a   # docker-hub
+    # image: hkdigital-debian-slim-2021a   # local
 
     restart: "no" # "no"|always|on-failure|unless-stopped
 

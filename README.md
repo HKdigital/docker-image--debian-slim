@@ -103,6 +103,8 @@ Build the docker image
 
 ```bash
 ./build-latest-image.sh
+docker image ls
+# Shows hkdigital-debian-slim-2021a
 ```
 
 ## Extra: push to docker hub
@@ -112,6 +114,13 @@ This is a generic instruction to push your images to `docker hub`. You must setu
 ```bash
 docker tag <existing-image> <hub-user>/<repo-name>[:<tag>]
 docker push <hub-user>/<repo-name>:<tag>
+```
+
+e.g.
+
+```bash
+docker tag hkdigital-debian-slim-2021a hkdigital/debian-slim-2021a
+docker push hkdigital/debian-slim-2021a
 ```
 
 See also [Docker hub repositories](https://docs.docker.com/docker-hub/repos/)

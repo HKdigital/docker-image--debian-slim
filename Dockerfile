@@ -1,15 +1,6 @@
 # ........................................................................ About
-
-# This docker image extends the image
-# [debian:bullseye-slim](https://hub.docker.com/_/debian) and
-# installs some `Swiss knife` tools that are often used by installers
-# and scripts.
 #
-# The image uses [dumb-init](https://github.com/Yelp/dumb-init) as
-# ENTRYPOINT, which overrides the default `/bin/sh -c`.
-#
-# A default CMD `/srv/run.sh` is specified, a script that executes
-# `sleep infinity`.
+# @see README at https://github.com/HKdigital/docker-images--debian-slim-2021a
 #
 
 # ......................................................................... FROM

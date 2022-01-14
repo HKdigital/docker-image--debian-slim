@@ -1,11 +1,18 @@
 
 # About
 
-This docker image extends the image [debian:bullseye-slim](https://hub.docker.com/_/debian) and installs some `Swiss knife` tools that are often used by installers and scripts.
+This docker image extends the image [debian:bullseye-slim](https://hub.docker.com/_/debian).
+
+Some `Swiss knife` tools that are often used by installers and scripts are installed. This image is not intended to be the smallest debian base image, 
+but as a structured way to create docker images.
 
 The image uses [dumb-init](https://github.com/Yelp/dumb-init) as ENTRYPOINT, which overrides the default `/bin/sh -c`.
 
 A default CMD `/srv/run.sh` is specified, a script that executes `sleep infinity`.
+
+## Versioning
+
+The folder and repository names have a year and a letter appended to their names. The idea is that there will be no breaking changes when the same year and letter combination are used.
 
 # Usage
 

@@ -124,3 +124,9 @@ docker push hkdigital/debian-slim-2021a
 ```
 
 See also [Docker hub repositories](https://docs.docker.com/docker-hub/repos/)
+
+# Buy me a coffee
+
+If you like my work, please support me:
+
+https://www.buymeacoffee.com/hkjens

@@ -8,7 +8,7 @@
 #
 
 echo
-echo "Executing [run.sh] from image [debian-slim-2021a]"
+echo "Executing [run.sh] from image [hkdigital/debian-slim]"
 echo "- $(date)"
 
 CMD="sleep infinity"

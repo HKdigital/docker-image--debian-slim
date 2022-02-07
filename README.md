@@ -21,7 +21,7 @@ The folder and repository names have a year and a letter appended to their names
 Run a container:
 
 ```bash
-docker run --rm hkdigital/debian-slim-2021a
+docker run --rm hkdigital/debian-slim
 ```
 
 This command will create a docker container, run the default CMD `/srv/run.sh` inside the container and remove the container when the script finishes.
@@ -33,7 +33,7 @@ By default `/srv/run.sh` will execute the command "sleep infinity", so it won't 
 Run the following command to run an interactive bash shell:
 
 ```bash
-docker run -ti --rm hkdigital/debian-slim-2021a bash
+docker run -ti --rm hkdigital/debian-slim bash
 ```
 
 A bash shell opens and you're free to do whatever you want. To exit the bash shell, type `exit`. Note that the container will be removed when the bash shell exits. Configuration or installed programs in the container will be lost.
@@ -52,7 +52,7 @@ version: "3.9"
 
 services:
   debian:
-    image: hkdigital/debian-slim-2021a
+    image: hkdigital/debian-slim
 ```
 
 Open two terminals and go to the directory where the `docker-compose.yaml` file resides.
@@ -85,7 +85,7 @@ Type `exit` to quit.
 Specify the name of this image in the FROM command of your Dockerfile.
 
 ```
-FROM hkdigital/debian-slim-2021a
+FROM hkdigital/debian-slim
 ...
 ```
 
@@ -95,8 +95,8 @@ Clone the latest commit from github into a local working directory
 
 ```bash
 git clone --depth 1 \
-  git@github.com:hkdigital/docker-images--debian-slim-2021a.git \
-  hkdigital-debian-slim-2021a
+  git@github.com:hkdigital/docker-images--debian-slim.git \
+  hkdigital-debian-slim
 ```
 
 Build the docker image
@@ -104,7 +104,7 @@ Build the docker image
 ```bash
 ./build-latest-image.sh
 docker image ls
-# Shows hkdigital-debian-slim-2021a
+# Shows hkdigital-debian-slim
 ```
 
 ## Extra: push to docker hub
@@ -119,8 +119,8 @@ docker push <hub-user>/<repo-name>:<tag>
 e.g.
 
 ```bash
-docker tag hkdigital-debian-slim-2021a hkdigital/debian-slim-2021a
-docker push hkdigital/debian-slim-2021a
+docker tag hkdigital-debian-slim hkdigital/debian-slim
+docker push hkdigital/debian-slim
 ```
 
 See also [Docker hub repositories](https://docs.docker.com/docker-hub/repos/)

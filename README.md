@@ -3,8 +3,8 @@
 
 This docker image extends the image [debian:bullseye-slim](https://hub.docker.com/_/debian).
 
-Some `Swiss knife` tools that are often used by installers and scripts are installed. This image is not intended to be the smallest debian base image, 
-but as a structured way to create docker images.
+Some useful basic tools are installed that are often used by installers and scripts. This image is not intended to be the smallest debian base image, 
+but as a useful image for development, testing and most common production environments.
 
 The image uses [dumb-init](https://github.com/Yelp/dumb-init) as ENTRYPOINT, which overrides the default `/bin/sh -c`.
 

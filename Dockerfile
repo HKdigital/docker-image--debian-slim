@@ -12,7 +12,7 @@ MAINTAINER Jens Kleinhout "hello@hkdigital.nl"
 # .......................................................................... ENV
 
 # Update the timestamp below to force an apt-get update during build
-ENV APT_SOURCES_REFRESHED_AT 2022-02-07_13h58
+ENV APT_SOURCES_REFRESHED_AT 2022-05-25_13h00
 
 # ........................................................ Install default tools
 

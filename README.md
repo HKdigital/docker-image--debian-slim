@@ -125,13 +125,11 @@ docker push hkdigital/debian-slim
 
 See also [Docker hub repositories](https://docs.docker.com/docker-hub/repos/)
 
-# Buy me a coffee
+# Support cancer research
 
-If you like our work and would like us to share some more code, please support us:
+If you like our work and would like us to share some more code, please support us! 
 
-[Buy me a coffee](https://www.buymeacoffee.com/hkdigital)
-
-## Support cancer research
+Currently we're collecting money for cancer research:
 
 Alpe d'HuZes is a unique sporting event where as much money as possible is raised for cancer research and for improving the quality of life of people with cancer. On a single day, 5000 participants will bike, hike or run the Alpe d'Huez. Attempting a maximum of six climbs, under the motto 'giving up is not an option'. 
 

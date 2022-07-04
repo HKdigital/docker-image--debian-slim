@@ -89,25 +89,7 @@ FROM hkdigital/debian-slim
 ...
 ```
 
-# Build locally
-
-Clone the latest commit from github into a local working directory
-
-```bash
-git clone --depth 1 \
-  git@github.com:hkdigital/docker-images--debian-slim.git \
-  hkdigital-debian-slim
-```
-
-Build the docker image
-
-```bash
-./build-latest-image.sh
-docker image ls
-# Shows hkdigital-debian-slim
-```
-
-## Extra: push to docker hub
+#### Tag your image and push the image to docker hub
 
 This is a generic instruction to push your images to `docker hub`. You must setup a (free) docker hub account and create the repository.
 
@@ -119,18 +101,33 @@ docker push <hub-user>/<repo-name>:<tag>
 e.g.
 
 ```bash
-docker tag hkdigital-debian-slim hkdigital/debian-slim
-docker push hkdigital/debian-slim
+docker tag acme-foo-image acme/foo-image
+docker push acme/foo-image
 ```
 
 See also [Docker hub repositories](https://docs.docker.com/docker-hub/repos/)
 
-# Support cancer research
 
-If you like our work and would like us to share some more code, please support us! 
+# Build locally
 
-Currently we're collecting money for cancer research:
+If you just want to use the image to create a container, there is no need to build the image locally. You can use the image from docker-hub.
 
-Alpe d'HuZes is a unique sporting event where as much money as possible is raised for cancer research and for improving the quality of life of people with cancer. On a single day, 5000 participants will bike, hike or run the Alpe d'Huez. Attempting a maximum of six climbs, under the motto 'giving up is not an option'. 
+Building the image locally is usually done for development of the image itself.
 
-https://www.opgevenisgeenoptie.nl/fundraisers/JensKleinhout
+## Get a working copy from the repository
+
+Clone the latest commit from github into a local working directory.
+
+```bash
+git clone --depth 1 \
+  git@github.com:hkdigital/docker-images--debian-slim.git \
+  hkdigital-debian-slim
+```
+
+## Build the docker image
+
+```bash
+./build-latest-image.sh
+docker image ls
+# Shows hkdigital-debian-slim
+```

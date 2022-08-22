@@ -10,13 +10,11 @@ The image uses [dumb-init](https://github.com/Yelp/dumb-init) as ENTRYPOINT, whi
 
 A default CMD `/srv/run.sh` is specified, a script that executes `sleep infinity`.
 
-## Versioning
-
-The folder and repository names have a year and a letter appended to their names. The idea is that there will be no breaking changes when the same year and letter combination are used.
-
 # Usage
 
-## Just try it out
+## Start using `docker run`
+
+### Run `sleep infinity` inside the container
 
 Run a container:
 
@@ -28,7 +26,7 @@ This command will create a docker container, run the default CMD `/srv/run.sh` i
 
 By default `/srv/run.sh` will execute the command "sleep infinity", so it won't finish. Press ctrl-c to quit the script and to stop and remove the container.
 
-## Run a bash shell inside the container
+### Run a bash shell inside the container
 
 Run the following command to run an interactive bash shell:
 
@@ -40,13 +38,13 @@ A bash shell opens and you're free to do whatever you want. To exit the bash she
 
 Note that the script `run-tmp-bash-container.sh`, which is included in this project, do nothing more than the command shown above.
 
-### Run using docker-compose
+### Run using `docker-compose`
 
 Below an example is shown of how the image can be used in a docker-compose file. The image will be downloaded from [Docker Hub](https://https://hub.docker.com).
 
 Note that the container will execute the default CMD. The default CMD executes `sleep infinity`, so the container will not terminate until you stop the container or press ctrl-c to stop the script.
 
-docker-compose.yaml
+docker-compose.yml
 ```yaml
 version: "3.9"
 
@@ -55,7 +53,7 @@ services:
     image: hkdigital/debian-slim
 ```
 
-Open two terminals and go to the directory where the `docker-compose.yaml` file resides.
+Open two terminals and go to the directory where the `docker-compose.yml` file resides.
 
 In the first terminal start the container:
 

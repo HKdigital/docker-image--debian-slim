@@ -12,7 +12,7 @@ MAINTAINER Jens Kleinhout "hello@hkdigital.nl"
 # .......................................................................... ENV
 
 # Update the timestamp below to force an apt-get update during build
-ENV APT_SOURCES_REFRESHED_AT 2022-08-21_16h16
+ENV APT_SOURCES_REFRESHED_AT 2022-10-05_13h17
 
 # ........................................................ Install default tools
 
@@ -20,6 +20,21 @@ RUN apt-get -qq update && \
     apt-get -qq -y install \
       nano telnet iproute2 iputils-ping curl wget \
       tar unzip rsync sudo procps gnupg dumb-init > /dev/null
+
+# ............................................................ COPY /image-files
+
+# Copy files and folders from project folder "/image-files" into the image
+# - The folder structure will be maintained by COPY
+#
+# @note
+#    No star in COPY command to keep directory structure
+#    @see http://stackoverflow.com/
+#        questions/30215830/dockerfile-copy-keep-subdirectory-structure
+
+# Update the timestamp below to force copy of image-files during build
+ENV IMAGE_FILES_REFRESHED_AT 2022-10-05_13h17
+
+COPY ./image-files/ /
 
 # ...................................................................... WORKDIR
 

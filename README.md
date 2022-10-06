@@ -70,13 +70,31 @@ docker-compose rm
 
 ### Run bash in an existing and running container (docker-compose)
 
-Use the following command to execute `bash` inside a running container (e.g. started like in the use-case above)
+Use the following command to execute `bash` inside a running container (e.g. started like explained above).
+
+You can use this when you need a disposable linux environment to try things out.
 
 ```bash
 docker-compose exec debian bash
 ```
 
 Type `exit` to quit.
+
+#### Environment variables from file
+
+The `run.sh` command calls a script `expand-file-environment-vars.sh`. This script detects environment variables the end with `_FILE` and than reads the contents of the file specified by that variable into a new environment variable.
+
+e.g. when defining in the yaml file
+
+service:
+  my_service:
+    environment:
+      SECRET_FILE: /run/secrets/SECRET
+
+The environment variable SECRET will be set that contains the contents of the file at `/run/secrets/SECRET`.
+
+Calling the `expand-file-environment-vars.sh` from `run.sh` is useful when creating images for Docker Swarm that use Secrets.
+
 
 ### Extend the image
 
@@ -89,7 +107,11 @@ FROM hkdigital/debian-slim
 
 #### Tag your image and push the image to docker hub
 
-This is a generic instruction to push your images to `docker hub`. You must setup a (free) docker hub account and create the repository.
+If your image is ready, you might want to publish it, so it can be downloaded from a central location, for example [Docker Hub](https://hub.docker.com/).
+
+To publish the image, you need two commands: `docker tag` and `docker push`.
+
+If you want to push to Docker hub, you must setup a (free) docker hub account and create the repository first.
 
 ```bash
 docker tag <existing-image> <hub-user>/<repo-name>[:<tag>]
@@ -105,6 +127,7 @@ docker push acme/foo-image
 
 See also [Docker hub repositories](https://docs.docker.com/docker-hub/repos/)
 
+If you're a paying user of Docker Hub, you can also publish images automatically from e.g. a GitHub or BitBucket repository.
 
 # Build locally
 

@@ -7,6 +7,11 @@
 # CMD ["/srv/run.sh"]
 #
 
+#
+# Expand environment variables that end with _FILE
+#
+source ./expand-file-environment-vars.sh
+
 echo
 echo "Executing [run.sh] from image [hkdigital/debian-slim]"
 echo "- $(date)"

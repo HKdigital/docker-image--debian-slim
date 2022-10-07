@@ -68,7 +68,7 @@ docker-compose stop
 docker-compose rm
 ```
 
-### Run bash in an existing and running container (docker-compose)
+#### Run bash in an existing and running container (docker-compose)
 
 Use the following command to execute `bash` inside a running container (e.g. started like explained above).
 
@@ -84,17 +84,42 @@ Type `exit` to quit.
 
 The `run.sh` command calls a script `expand-file-environment-vars.sh`. This script detects environment variables the end with `_FILE` and than reads the contents of the file specified by that variable into a new environment variable.
 
-e.g. when defining in the yaml file
+e.g. when defining in the docker-compose (stack) yaml file
 
+```yml
 service:
   my_service:
     environment:
       SECRET_FILE: /run/secrets/SECRET
+```
 
 The environment variable SECRET will be set that contains the contents of the file at `/run/secrets/SECRET`.
 
-Calling the `expand-file-environment-vars.sh` from `run.sh` is useful when creating images for Docker Swarm that use Secrets.
+##### Docker Swarm Secrets
 
+The main reason why the environment `_FILE` variables are supported is for Docker Swarm.
+
+When creating your own image, call the `./expand-file-environment-vars.sh` from your `run.sh`. This way, the contents of Docker Secrets files will be loaded into environment variables.
+
+The `_FILE` appendix is not a Docker standard, but generally accepted as a good approach.
+
+A complete Docke Swarm stack example:
+
+```yml
+version: '3.9'  # use a modern version, otherwise secrets won't work
+
+secrets:
+  SECRET:
+    external: true
+
+service:
+  my_service:
+    secrets:
+      - SECRET
+
+    environment:
+      SECRET_FILE: /run/secrets/SECRET
+```
 
 ### Extend the image
 
